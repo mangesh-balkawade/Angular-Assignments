@@ -1,0 +1,12 @@
+<label for="tex">Enter Text</label>
+<input  type="text" id="tex"  [(ngModel)]="data1"
+ placeholder="enter data">
+ <h1>{{data1}}</h1>
+ <h1>{{data1.length}}</h1>
+
+ <label for="tex">Enter Text</label>
+<input  type="text" id="tex" #msg (keyup)="len(msg.value)"
+ placeholder="enter data">
+ <h1>{{data2}}</h1>
+ <h1>{{data2.length}}</h1>
+
