@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- public data:any; 
+ public message:String="Hello from Parent ....";
+
+ public data:any;
+ 
 }

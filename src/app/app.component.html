@@ -1,4 +1,5 @@
+<app-child [data]="message"
+(myEvent)="data=$event"
+></app-child>
 
-
-  <app-child (myEvent)="data=$event"></app-child>
-  <h1>{{data}}</h1>
+<h1>Data Coming From child is {{data}}</h1>
