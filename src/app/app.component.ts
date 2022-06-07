@@ -6,21 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public data1:string='';
+  public data2:string='';
 
-  str:string="Marvellous Infosystem"
- 
-  public fun()
+  public len(len:any)
   {
-    this.str = "Education For Better Tommorrow";
+    this.data2=len;
   }
-
-  public upperCase()
-  {
-    this.str=this.str.toUpperCase();
-  }
-
-  public lowerCase()
-  {
-    this.str=this.str.toLowerCase();
-  }
+  
 }
