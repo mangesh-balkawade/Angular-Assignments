@@ -1,0 +1,27 @@
+<label>Enter No:</label>
+<br>
+<br>
+<input type="number" [(ngModel)]="no">
+<br><br>
+<button (click)="prime()">ChkPrime</button>
+<br>
+<h1 *ngIf="flag">No is prime</h1>
+<h1 *ngIf="!flag">No is not prime</h1>
+
+<label>Enter String</label>
+<br>
+<br>
+<input type="text" [(ngModel)]="str">
+<br><br>
+<button (click)="countCap()">ChkCapital</button>
+<h2>The no of Capital
+    Letters in the String are : {{icnt}}</h2>
+    <br>
+   <div *ngIf="flag==true;then tru;else fal"></div>
+<ng-template #tru>
+    <h2>No is Prime</h2>
+</ng-template>
+
+<ng-template #fal>
+    <h2>No is not Prime</h2>
+</ng-template>
