@@ -1,0 +1,123 @@
+<div class="container-fluid">
+  <div class="row" [style.border]="'2px solid black'" id="first">
+    <div class="col"></div>
+    <div class="col">
+      <h2 class="text-danger" [style.margin-top]="'2px'">Contact Our </h2>
+      <h4>Customer Suppourt Center</h4>
+    </div>
+    <div class="col">
+
+      <img class="img-fluid" [style.margin-left]="'10%'" [style.height]="'100%'" [style.width]="'auto'"
+        src="../assets/Laptop (2).png">
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+  <h2 class="text-center" [style.margin-top]="'5%'">Contact Information</h2>
+  <h4 class="text-center">Please Fill Your Contact Information Below</h4>
+  <br>
+  <form [formGroup]='ValidationForm' [style.margin-left]="'10%'">
+
+    <div class="form-group">
+      <label for="name">Name*</label>
+      <br>
+      <label for="name">FirstName*</label>
+      <input type="text" class="form-control" [style.width]="'50%'" formControlName="firstName"
+        [class.is-invalid]="ValidationForm.get('firstName')?.invalid && ValidationForm.get('firstName')?.touched">
+      <small *ngIf="ValidationForm.controls['firstName'].errors?.['required'] &&
+       ValidationForm.controls['firstName'].touched" class="text-danger">Username is required</small><br>
+      <small *ngIf="ValidationForm.controls['firstName'].errors?.['pattern'] &&
+      ValidationForm.controls['firstName'].touched" class="text-danger">Only Alphabets are allowed</small><br>
+
+      <label for="name" [style.margin-top]="' 10px'" >LastName*</label>
+      <input type="text" class="form-control" [style.width]="'50%'" formControlName="lastName"
+        [class.is-invalid]="ValidationForm.get('lastName')?.invalid && ValidationForm.get('lastName')?.touched">
+      <small
+        *ngIf="ValidationForm.controls['lastName'].errors?.['required'] && ValidationForm.controls['lastName'].touched "
+        class="text-danger">Username is required</small><br>
+      <small
+        *ngIf="ValidationForm.controls['lastName'].errors?.['pattern'] && ValidationForm.controls['lastName'].touched"
+        class="text-danger">Only Alphabets are allowed</small><br>
+    </div>
+
+    <div class="form-group">
+      <label [style.margin-top]="' 10px'">Email* </label>
+      <input type="text" class="form-control" [style.width]="'50%'" formControlName="email"
+        [class.is-invalid]="ValidationForm.get('email')?.invalid && ValidationForm.get('email')?.touched">
+      <small *ngIf="ValidationForm.controls['email'].errors?.['required'] && ValidationForm.controls['email'].touched "
+        class="text-danger">Email is required</small><br>
+      <small *ngIf="ValidationForm.controls['email'].errors?.['pattern'] && ValidationForm.controls['email'].touched"
+        class="text-danger">Please Provide A Valid Email</small><br>
+    </div>
+
+    <div class="form-group">
+      <label [style.margin-top]="' 10px'">Phone* </label>
+      <input type="text" class="form-control" [style.width]="'50%'" formControlName='phoneNo'
+        [class.is-invalid]="ValidationForm.get('phoneNo')?.invalid && ValidationForm.get('phoneNo')?.touched">
+      <small
+        *ngIf="ValidationForm.controls['phoneNo'].errors?.['required'] && ValidationForm.controls['phoneNo'].touched "
+        class="text-danger">PhoneNo is required</small><br>
+      <small
+        *ngIf="ValidationForm.controls['phoneNo'].errors?.['pattern'] && ValidationForm.controls['phoneNo'].touched"
+        class="text-danger">Phone No Should Consist of 10 Digits Only</small><br>
+    </div>
+
+    <div>
+
+      <div class="form-group">
+        <label [style.margin-top]="' 10px'">City*</label>
+        <input type="text" class="form-control" [style.width]="'50%'" formControlName="city"
+          [class.is-invalid]="ValidationForm.get('city')?.invalid && ValidationForm.get('city')?.touched">
+        <small *ngIf="ValidationForm.controls['city'].errors?.['required'] && ValidationForm.controls['city'].touched "
+          class="text-danger">Please Enter City</small><br>
+        <small *ngIf="ValidationForm.controls['city'].errors?.['pattern'] && ValidationForm.controls['city'].touched"
+          class="text-danger">City Should consist of minimum 4 alphabets</small><br>
+      </div>
+
+      <div class="form-group">
+        <label [style.margin-top]="' 10px'">State*</label>
+        <input type="text" class="form-control" [style.width]="'50%'" formControlName="state"
+          [class.is-invalid]="ValidationForm.get('state')?.invalid && ValidationForm.get('state')?.touched">
+        <small
+          *ngIf="ValidationForm.controls['state'].errors?.['required'] && ValidationForm.controls['state'].touched "
+          class="text-danger">Please Enter State</small><br>
+        <small *ngIf="ValidationForm.controls['state'].errors?.['pattern'] && ValidationForm.controls['state'].touched"
+          class="text-danger">State Should Be from Maharashtra,Gujrat,Uttar Pradesh</small><br>
+      </div>
+
+      <div class="form-group">
+        <label [style.margin-top]="' 10px'">Zip Code*</label>
+        <input type="number" class="form-control" [style.width]="'50%'" formControlName="zipCode"
+          [class.is-invalid]="ValidationForm.get('zipCode')?.invalid && ValidationForm.get('zipCode')?.touched">
+        <small
+          *ngIf="ValidationForm.controls['zipCode'].errors?.['required'] && ValidationForm.controls['zipCode'].touched "
+          class="text-danger">Please Enter ZipCode</small><br>
+        <small
+          *ngIf="ValidationForm.controls['zipCode'].errors?.['pattern'] && ValidationForm.controls['zipCode'].touched"
+          class="text-danger">ZipCode Should consist of 5 digits only </small><br>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label [style.margin-top]="' 10px'">Comments*</label>
+      <input type="text" class="form-control" [style.width]="'50%'" formControlName="comment"
+        [class.is-invalid]="ValidationForm.get('comment')?.invalid && ValidationForm.get('comment')?.touched">
+      <small
+        *ngIf="ValidationForm.controls['comment'].errors?.['pattern'] && ValidationForm.controls['comment'].touched"
+        class="text-danger">Comments Should have 30 minimum characters </small><br>
+
+    </div>
+
+
+    <div class="form-group">
+      <input [style.margin-top]="' 10px'" type="submit" class="btn btn-primary" [style.margin-top]="' 10px'"
+        [style.width]="'auto'
+      " [disabled]="ValidationForm.invalid">
+    </div>
+
+  </form>
+  <br>
+  <h6 [style.margin-left]="'10%'">{{ValidationForm.value|json}}</h6>
+
+</div>
